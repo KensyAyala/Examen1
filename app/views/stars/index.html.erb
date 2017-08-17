@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-danger">
+  <div class="panel-heading"><h1 align="center">Estrellas del Universo</h1></div>
+  <div class="panel-body">
+  Una estrella (del latín: stella) es una esfera luminosa de plasma que mantiene su forma gracias a su propia gravedad. La estrella más cercana a la Tierra es el Sol </div>
+  </div>
+<div class="jumbotron">
+  <div class="container">
+    <h2><span class="label label-danger">Listado de Estrellas</span></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><h3>Estrella</h3></th>
+          <th><h3>Descripcion</h3></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @stars.each do |star| %>
+          <tr>
+            <td><%= star.name_star %></td>
+            <td><%= star.description %></td>
+            <td><%= link_to 'Show', star %></td>
+            <td><%= link_to 'Edit', edit_star_path(star) %></td>
+            <td><%= link_to 'Destroy', star, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    
+    <%= link_to 'Nueva Star', new_star_path %>
+  </div>
+</div>

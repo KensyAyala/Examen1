@@ -1,0 +1,30 @@
+<div class="well">
+
+  <%= form_with(model: star, local: true) do |form| %>
+    <% if star.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(star.errors.count, "error") %> prohibited this star from being saved:</h2>
+
+        <ul>
+        <% star.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <span class="label label-danger"><%= form.label :Estrella %></span>
+      <%= form.text_field :name_star, id: :star_name_star %>
+    </div>
+
+    <div class="field">
+      <span class="label label-danger"><%= form.label :Descripcion %></span>
+      <%= form.text_field :description, id: :star_description %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

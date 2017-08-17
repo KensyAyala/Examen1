@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name planet:</strong>
+  <%= @my_planet.name_planet %>
+</p>
+
+<p>
+  <strong>Radius:</strong>
+  <%= @my_planet.radius %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @my_planet.description %>
+</p>
+
+<%= link_to 'Edit', edit_my_planet_path(@my_planet) %> |
+<%= link_to 'Back', my_planets_path %>

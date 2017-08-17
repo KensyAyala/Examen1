@@ -1,0 +1,37 @@
+<div class="well">
+<%= form_with(model: galaxy, local: true) do |form| %>
+    <% if galaxy.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(galaxy.errors.count, "error") %> prohibited this galaxy from being saved:</h2>
+
+        <ul>
+        <% galaxy.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="field">
+    <span class="label label-warning"><%= form.label :Galaxia %></span>
+    <%= form.text_field :name_galaxy, id: :galaxy_name_galaxy %>
+  </div>
+
+  <div class="field">
+    <span class="label label-warning"><%= form.label :Distancia %></span>
+    <%= form.text_field :distance, id: :galaxy_distance %>
+  </div>
+
+  <div class="field">
+  <span class="label label-warning"><%= form.label :Descripcion %></span>
+  <%= form.text_field :description, id: :galaxy_description %>
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>
+

@@ -1,0 +1,36 @@
+<div class="well">
+  <%= form_with(model: my_planet, local: true) do |form| %>
+    <% if my_planet.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(my_planet.errors.count, "error") %> prohibited this my_planet from being saved:</h2>
+
+        <ul>
+        <% my_planet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <span class="label label-success"><%= form.label :Planeta %></span>
+      <%= form.text_field :name_planet, id: :my_planet_name_planet %>
+    </div>
+
+    <div class="field">
+      <span class="label label-success"><%= form.label :Radio_km2 %></span>
+      <%= form.text_field :radius, id: :my_planet_radius %>
+    </div>
+
+    <div class="field">
+    <span class="label label-success"><%= form.label :Descripcion %></span>
+      <%= form.text_field :description, id: :my_planet_description %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</div>
+

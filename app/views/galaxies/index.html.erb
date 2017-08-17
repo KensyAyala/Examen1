@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><h1 align="center">Galaxias del Universo</h1></div>
+  <div class="panel-body">
+  Es una agrupación de estrellas, cuerpos celestes y materia cósmica que está concentrada en una determinada región del espacio por efecto de la atracción gravitatoria y constituye una unidad en el universo</div>
+  </div>
+<div class="jumbotron">
+  <div class="container">
+    <h2><span class="label label-warning">Listado de Galaxiass</span></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><h3>Galaxia</h3></th>
+          <th><h3>Distancia</h3></th>
+          <th><h3>Descripcion</h3></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @galaxies.each do |galaxy| %>
+          <tr>
+            <td><%= galaxy.name_galaxy %></td>
+            <td><%= galaxy.distance %></td>
+            <td><%= galaxy.description %></td>
+            <td><%= link_to 'Show', galaxy %></td>
+            <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>
+            <td><%= link_to 'Destroy', galaxy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    
+    <%= link_to 'Nueva registro de Galaxia', new_galaxy_path %>
+  </div>
+</div>
+
